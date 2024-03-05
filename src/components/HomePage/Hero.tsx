@@ -1,8 +1,8 @@
-import Button from "./Button";
+import Button from "../UI/Button";
 
-export default function Main() {
+export default function Hero() {
   return (
-    <div className="main">
+    <div className="hero">
       <section className="text">
         <h2>Not your average potion...</h2>
         <p>The best potions at the best price for any deed imaginable.</p>

@@ -1,5 +1,5 @@
-import Heading from "./Heading";
-import Review from "./Review";
+import Heading from "../UI/Heading";
+import Review from "../UI/Review";
 
 export default function Reviews() {
   return (

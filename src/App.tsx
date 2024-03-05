@@ -1,25 +1,22 @@
-import FeaturedProducts from "./components/FeaturedProducts";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import HighlightProduct from "./components/HighlightProduct";
-import ImageSection from "./components/ImageSection";
-import Main from "./components/Main";
-import NewArrivals from "./components/NewArrivals";
-import Reviews from "./components/Reviews";
-import Sponsors from "./components/Sponsors";
+import FeaturedProducts from "./components/HomePage/FeaturedProducts";
+import HighlightProduct from "./components/HomePage/HighlightProduct";
+import ImageSection from "./components/HomePage/ImageSection";
+import Hero from "./components/HomePage/Hero";
+import NewArrivals from "./components/HomePage/NewArrivals";
+import Reviews from "./components/HomePage/Reviews";
+import Sponsors from "./components/HomePage/Sponsors";
+import "./components/HomePage/HomePage.css";
 
 function App() {
   return (
     <>
-      <Header />
-      <Main />
+      <Hero />
       <ImageSection />
       <FeaturedProducts />
       <NewArrivals />
       <HighlightProduct />
       <Reviews />
       <Sponsors />
-      <Footer />
     </>
   );
 }

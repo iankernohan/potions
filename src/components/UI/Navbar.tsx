@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 
-export default function Header() {
+export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="header">
+    <div className="navbar">
       <h1>Pretty Potions</h1>
       <div className="menu-icon" onClick={() => setShowMenu((prev) => !prev)}>
         <IoMenu />
@@ -17,11 +18,17 @@ export default function Header() {
             : {}
         }
       >
-        <li>Home</li>
-        <li>Products</li>
+        <li>
+          <NavLink to={"/"}>Home</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/products"}>Products</NavLink>
+        </li>
         <li>About</li>
         <li>Contact</li>
-        <li>Cart</li>
+        <li>
+          <NavLink to={"/cart"}>Cart</NavLink>
+        </li>
       </ul>
     </div>
   );

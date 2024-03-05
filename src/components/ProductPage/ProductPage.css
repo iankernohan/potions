@@ -1,0 +1,38 @@
+.product-page {
+  padding-top: 10rem;
+  display: grid;
+}
+
+.product-page .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.product-page .header h2 {
+  font-size: 2rem;
+}
+
+.product-page select {
+  height: fit-content;
+  padding: 5px 4px;
+  border-radius: 0;
+}
+
+.product-page select:focus {
+  outline: 2px solid var(--green);
+  border: none;
+}
+
+.product-page .products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 4rem;
+}
