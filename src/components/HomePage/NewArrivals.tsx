@@ -13,6 +13,7 @@ export default function NewArrivals() {
             price: 2000,
             rating: 4,
             id: 0,
+            quantity: 1,
           }}
         />
         <FeaturedProduct
@@ -22,6 +23,7 @@ export default function NewArrivals() {
             price: 2750,
             rating: 5,
             id: 9,
+            quantity: 1,
           }}
         />
         <FeaturedProduct
@@ -31,6 +33,7 @@ export default function NewArrivals() {
             price: 1500,
             rating: 4,
             id: 1,
+            quantity: 1,
           }}
         />
       </section>

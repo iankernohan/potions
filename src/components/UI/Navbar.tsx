@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
@@ -7,7 +8,9 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <h1>Pretty Potions</h1>
+      <h1>
+        <Link to={"/"}>Pretty Potions</Link>
+      </h1>
       <div className="menu-icon" onClick={() => setShowMenu((prev) => !prev)}>
         <IoMenu />
       </div>

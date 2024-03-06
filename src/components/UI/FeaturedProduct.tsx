@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Potion } from "../../data/potions";
 import Button from "./Button";
 import StarRating from "./StarRating";
+import { useAppDispatch } from "../../redux/hooks";
+import { addPotion } from "../../redux/cartSlice";
+import { Potion } from "../../redux/potionsSlice";
 
 interface Props {
   potion: Potion;
@@ -10,10 +12,11 @@ interface Props {
 export default function FeaturedProduct({ potion }: Props) {
   const formatter = new Intl.NumberFormat("en-US");
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   return (
     <div className="featured-product">
-      <div onClick={() => navigate(`/potion/${potion.id}`)}>
+      <div className="product" onClick={() => navigate(`/potion/${potion.id}`)}>
         <img src={potion.image} />
         <h5>{potion.name}</h5>
       </div>
@@ -26,6 +29,7 @@ export default function FeaturedProduct({ potion }: Props) {
       <Button
         text="Add to Cart"
         style={{ padding: "5px 8px", fontSize: "0.9rem" }}
+        onClick={() => dispatch(addPotion(potion))}
       />
     </div>
   );

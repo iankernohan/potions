@@ -189,30 +189,6 @@
   gap: 3rem;
 }
 
-/* <----------FEATURED PRODUCT----------> */
-.featured-product {
-  /* background-color: #f1f1f1; */
-  padding: 15px;
-}
-
-.featured-product img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-}
-
-.featured-product h5 {
-  margin: 1rem 0;
-  margin-bottom: 0.25rem;
-  font-size: 1.1rem;
-}
-
-.featured-product p {
-  margin-bottom: 0.5rem;
-  margin-top: 0.25rem;
-  font-weight: 400;
-}
-
 /* <----------NEW ARRIVALS----------> */
 .new-arrivals {
   display: grid;

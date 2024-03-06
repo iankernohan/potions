@@ -13,6 +13,7 @@ export default function FeaturedProducts() {
             price: 1500,
             rating: 4,
             id: 8,
+            quantity: 1,
           }}
         />
 
@@ -23,6 +24,7 @@ export default function FeaturedProducts() {
             price: 1500,
             rating: 4,
             id: 4,
+            quantity: 1,
           }}
         />
         <FeaturedProduct
@@ -32,6 +34,7 @@ export default function FeaturedProducts() {
             price: 1500,
             rating: 4,
             id: 8,
+            quantity: 1,
           }}
         />
 
@@ -42,6 +45,7 @@ export default function FeaturedProducts() {
             price: 2750,
             rating: 5,
             id: 2,
+            quantity: 1,
           }}
         />
         <FeaturedProduct
@@ -51,6 +55,7 @@ export default function FeaturedProducts() {
             price: 2000,
             rating: 4,
             id: 3,
+            quantity: 1,
           }}
         />
         <FeaturedProduct
@@ -60,6 +65,7 @@ export default function FeaturedProducts() {
             price: 2750,
             rating: 5,
             id: 5,
+            quantity: 1,
           }}
         />
       </section>

@@ -1,8 +1,10 @@
-import potions from "../../data/potions";
+import { useAppSelector } from "../../redux/hooks";
 import FeaturedProduct from "../UI/FeaturedProduct";
 import "./ProductPage.css";
 
 export default function ProductsPage() {
+  const potions = useAppSelector((state) => state.potions.potions);
+
   return (
     <div className="product-page">
       <div className="header">
@@ -16,7 +18,7 @@ export default function ProductsPage() {
 
       <section className="products">
         {potions.map((potion) => (
-          <FeaturedProduct potion={potion} />
+          <FeaturedProduct key={potion.id} potion={potion} />
         ))}
       </section>
     </div>
