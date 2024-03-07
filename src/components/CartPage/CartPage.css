@@ -69,8 +69,7 @@
 }
 
 .cart-item .quantity b {
-  border: 1px solid black;
-  padding: 8px 10px;
+  font-size: 1.25rem;
 }
 
 .cart-item .quantity .buttons {
@@ -84,9 +83,10 @@
 }
 
 .cart-page .total {
-  border-top: 2px solid var(--orange);
+  border-top: 2px solid var(--green);
   grid-column: 2 / -1;
   margin-bottom: 4rem;
+  display: grid;
 }
 
 .cart-page .total > div {
@@ -96,6 +96,14 @@
 
 .cart-page .total > div:last-child {
   font-weight: 700;
+}
+
+.cart-page .total > .button {
+  margin-left: auto;
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .empty-cart {

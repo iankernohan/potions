@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../redux/hooks";
+import { IoArrowForwardSharp } from "react-icons/io5";
 
 export default function TotalPrice() {
   const cartPotions = useAppSelector((state) => state.cart.potions);
@@ -18,7 +19,6 @@ export default function TotalPrice() {
             {subtotal} <small>Gold coins</small>
           </p>
         </div>
-
         <div>
           <p>Tax</p>
           <p>
@@ -31,6 +31,9 @@ export default function TotalPrice() {
             {total} <small>Gold coins</small>
           </p>
         </div>
+        <button className="button">
+          Proceed to checkout {<IoArrowForwardSharp />}
+        </button>
       </section>
     </section>
   );

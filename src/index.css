@@ -40,7 +40,7 @@ body {
 }
 
 .button:hover,
-.button:focus {
+.button:active {
   cursor: pointer;
   background-color: var(--dark-orange);
   outline: none;

@@ -9,7 +9,9 @@ export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const cartPotions = useAppSelector((state) => state.cart.potions);
   const cartLength: string =
-    cartPotions.length > 0 ? ` ${cartPotions.length}` : "";
+    cartPotions.length > 0
+      ? ` ${cartPotions.reduce((a, b) => a + b.quantity, 0)}`
+      : "";
 
   return (
     <div className="navbar">
