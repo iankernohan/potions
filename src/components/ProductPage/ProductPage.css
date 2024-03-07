@@ -1,6 +1,8 @@
 .product-page {
   padding-top: 10rem;
   display: grid;
+  max-width: 80rem;
+  margin: auto;
 }
 
 .product-page .header {

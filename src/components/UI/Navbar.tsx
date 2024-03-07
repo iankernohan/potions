@@ -34,8 +34,12 @@ export default function Navbar() {
         <li>
           <NavLink to={"/products"}>Products</NavLink>
         </li>
-        <li>About</li>
-        <li>Contact</li>
+        <li>
+          <NavLink to={"/about"}>About</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/contact"}>Contact</NavLink>
+        </li>
         <li>
           <NavLink to={"/cart"}>
             <IoCartOutline size={"2rem"} />

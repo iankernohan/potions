@@ -4,13 +4,16 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
+  max-width: 80rem;
+  width: 80%;
+  margin: auto;
 }
 
 .cart-page .col-labels,
 .cart-page .cart-item,
 .cart-page .total-container {
   display: grid;
-  width: 80%;
+  width: 100%;
   align-items: center;
   grid-template-columns: 50% 25% 25%;
   padding: 1rem;
@@ -75,6 +78,9 @@
 .cart-item .quantity .buttons {
   display: flex;
   gap: 0.5rem;
+}
+.cart-item .quantity .buttons .button {
+  font-size: 1.1rem;
 }
 
 .cart-item .subtotal {
