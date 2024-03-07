@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .cart-page .col-labels,
@@ -95,4 +96,17 @@
 
 .cart-page .total > div:last-child {
   font-weight: 700;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.empty-cart h2 {
+  font-size: 2rem;
 }

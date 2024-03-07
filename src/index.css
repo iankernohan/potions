@@ -74,6 +74,7 @@ body {
 .navbar ul {
   list-style-type: none;
   display: flex;
+  align-items: center;
   gap: 15px;
   margin-right: 10px;
   color: black;
@@ -214,4 +215,10 @@ body {
 
 .featured-product .product:hover {
   cursor: pointer;
+}
+
+/* <----------TOASTER----------> */
+
+.toast {
+  border: 1px solid var(--green);
 }

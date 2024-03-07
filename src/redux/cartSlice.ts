@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { Potion } from "./potionsSlice";
+import toast from "react-hot-toast";
 
 interface CartState {
   potions: Potion[];
@@ -25,12 +26,14 @@ export const cartSlice = createSlice({
       } else {
         state.potions.push(action.payload);
       }
+      toast.success("Potion added to cart");
     },
     removePotion: (state, action: PayloadAction<Potion>) => {
       console.log("potion removed from cart");
       const id: number = action.payload.id;
       const bye = state.potions.filter((potion) => potion.id === id);
       state.potions.splice(state.potions.indexOf(bye[0]), 1);
+      toast.success("Potion removed from cart");
     },
     incrementQuantity: (state, action: PayloadAction<Potion>) => {
       const potion = state.potions.find(
@@ -49,6 +52,7 @@ export const cartSlice = createSlice({
         const id: number = action.payload.id;
         const bye = state.potions.filter((potion) => potion.id === id);
         state.potions.splice(state.potions.indexOf(bye[0]), 1);
+        toast.success("Potion removed from cart");
       }
     },
   },
