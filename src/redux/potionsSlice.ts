@@ -100,6 +100,32 @@ const initialState: PotionsState = {
   ],
 };
 
+export function sortByPrice(array: Potion[], backwards: boolean) {
+  const copy = [...array];
+  function comparePrice(a: Potion, b: Potion) {
+    const priceA = a.price;
+    const priceB = b.price;
+    return backwards ? priceB - priceA : priceA - priceB;
+  }
+  copy.sort(comparePrice);
+  return copy;
+}
+
+export function sortByName(array: Potion[], backwards: boolean) {
+  const copy = [...array];
+  function compareName(a: Potion, b: Potion) {
+    const nameA = a.name;
+    const nameB = b.name;
+    if (backwards) {
+      return nameA > nameB ? 1 : -1;
+    } else {
+      return nameA < nameB ? 1 : -1;
+    }
+  }
+  copy.sort(compareName);
+  return copy;
+}
+
 export const potionsSlice = createSlice({
   name: "potions",
   initialState,

@@ -1,73 +1,20 @@
+import { useAppSelector } from "../../redux/hooks";
 import FeaturedProduct from "../UI/FeaturedProduct";
 import Heading from "../UI/Heading";
 
 export default function FeaturedProducts() {
+  const allPotions = useAppSelector((state) => state.potions.potions);
+
   return (
     <div className="featured-products">
       <Heading title="Featured Products" />
       <section>
-        <FeaturedProduct
-          potion={{
-            image: "./image9.png",
-            name: "Flos Mortis",
-            price: 1500,
-            rating: 4,
-            id: 8,
-            quantity: 1,
-          }}
-        />
-
-        <FeaturedProduct
-          potion={{
-            image: "./image4.png",
-            name: "Aurora Somniorum",
-            price: 1500,
-            rating: 4,
-            id: 4,
-            quantity: 1,
-          }}
-        />
-        <FeaturedProduct
-          potion={{
-            image: "./image9.png",
-            name: "Flos Mortis",
-            price: 1500,
-            rating: 4,
-            id: 8,
-            quantity: 1,
-          }}
-        />
-
-        <FeaturedProduct
-          potion={{
-            image: "./image2.png",
-            name: "Sapientia Arcana",
-            price: 2750,
-            rating: 5,
-            id: 2,
-            quantity: 1,
-          }}
-        />
-        <FeaturedProduct
-          potion={{
-            image: "./image3.png",
-            name: "Gelum Ignis",
-            price: 2000,
-            rating: 4,
-            id: 3,
-            quantity: 1,
-          }}
-        />
-        <FeaturedProduct
-          potion={{
-            image: "./image5.png",
-            name: "Lumen Noctis",
-            price: 2750,
-            rating: 5,
-            id: 5,
-            quantity: 1,
-          }}
-        />
+        <FeaturedProduct potion={allPotions[8]} />
+        <FeaturedProduct potion={allPotions[4]} />
+        <FeaturedProduct potion={allPotions[7]} />
+        <FeaturedProduct potion={allPotions[2]} />
+        <FeaturedProduct potion={allPotions[3]} />
+        <FeaturedProduct potion={allPotions[5]} />
       </section>
     </div>
   );

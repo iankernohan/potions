@@ -1,23 +1,54 @@
+import { useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
+import { Potion, sortByName, sortByPrice } from "../../redux/potionsSlice";
 import FeaturedProduct from "../UI/FeaturedProduct";
 import "./ProductPage.css";
 
 export default function ProductsPage() {
+  const [filterBy, setFilterBy] = useState("default");
   const potions = useAppSelector((state) => state.potions.potions);
+  let filteredPotions: Potion[] = [...potions];
+
+  switch (filterBy) {
+    case "default":
+      filteredPotions = potions;
+      break;
+    case "low":
+      filteredPotions = sortByPrice(potions, false);
+      break;
+    case "high":
+      filteredPotions = sortByPrice(potions, true);
+      break;
+    case "name":
+      filteredPotions = sortByName(potions, true);
+      break;
+    case "name-backwards":
+      filteredPotions = sortByName(potions, false);
+      break;
+    default:
+      console.log("not an option");
+  }
 
   return (
     <div className="product-page">
       <div className="header">
         <h2>All Products</h2>
-        <select name="filter" id="filter">
+        <select
+          name="filter"
+          id="filter"
+          value={filterBy}
+          onChange={(e) => setFilterBy(e.target.value)}
+        >
+          <option value="default">Default</option>
           <option value="low">Price (low to high)</option>
           <option value="high">Price (high to low)</option>
-          <option value="Name">Name</option>
+          <option value="name">Name</option>
+          <option value="name-backwards">Name (backwards)</option>
         </select>
       </div>
 
       <section className="products">
-        {potions.map((potion) => (
+        {filteredPotions.map((potion) => (
           <FeaturedProduct key={potion.id} potion={potion} />
         ))}
       </section>

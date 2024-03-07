@@ -1,41 +1,17 @@
+import { useAppSelector } from "../../redux/hooks";
 import FeaturedProduct from "../UI/FeaturedProduct";
 import Heading from "../UI/Heading";
 
 export default function NewArrivals() {
+  const allPotions = useAppSelector((state) => state.potions.potions);
+
   return (
     <div className="new-arrivals">
       <Heading title="New Arrivals" />
       <section>
-        <FeaturedProduct
-          potion={{
-            image: "./image0.png",
-            name: "Ignis Aeternus",
-            price: 2000,
-            rating: 4,
-            id: 0,
-            quantity: 1,
-          }}
-        />
-        <FeaturedProduct
-          potion={{
-            image: "./image10.png",
-            name: "Venenum Amoris",
-            price: 2750,
-            rating: 5,
-            id: 9,
-            quantity: 1,
-          }}
-        />
-        <FeaturedProduct
-          potion={{
-            image: "./image1.png",
-            name: "Nebulae Caelestes",
-            price: 1500,
-            rating: 4,
-            id: 1,
-            quantity: 1,
-          }}
-        />
+        <FeaturedProduct potion={allPotions[0]} />
+        <FeaturedProduct potion={allPotions[9]} />
+        <FeaturedProduct potion={allPotions[1]} />
       </section>
     </div>
   );
