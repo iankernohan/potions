@@ -6,8 +6,12 @@ import NewArrivals from "./components/HomePage/NewArrivals";
 import Reviews from "./components/HomePage/Reviews";
 import Sponsors from "./components/HomePage/Sponsors";
 import "./components/HomePage/HomePage.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    scrollTo({ top: 0 });
+  }, []);
   return (
     <>
       <Hero />

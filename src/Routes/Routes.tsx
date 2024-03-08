@@ -36,6 +36,22 @@ const router = createBrowserRouter([
         element: <UnderConstruction />,
       },
       {
+        path: "/blog",
+        element: <UnderConstruction />,
+      },
+      {
+        path: "/coupons",
+        element: <UnderConstruction />,
+      },
+      {
+        path: "/returnPolicy",
+        element: <UnderConstruction />,
+      },
+      {
+        path: "/joinAffiliate",
+        element: <UnderConstruction />,
+      },
+      {
         path: "/:unknown",
         element: <PageNotFound />,
       },

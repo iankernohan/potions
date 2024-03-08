@@ -32,6 +32,7 @@ export default function ProductInfoPage() {
       relatedPotions.push(newPotion);
     }
     setRelated(relatedPotions);
+    scrollTo({ top: 0 });
   }, [potions, potion.id]);
 
   return (
