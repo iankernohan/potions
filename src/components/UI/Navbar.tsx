@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
 import { IoCartOutline } from "react-icons/io5";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,9 +15,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <h1>
-        <Link to={"/"}>Pretty Potions</Link>
-      </h1>
+      <Logo />
       <div className="menu-icon" onClick={() => setShowMenu((prev) => !prev)}>
         <IoMenu />
       </div>
@@ -42,8 +40,8 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink to={"/cart"}>
-            <IoCartOutline size={"2rem"} />
-            {cartLength}
+            <IoCartOutline size={"1.75rem"} />
+            <sup>{cartLength}</sup>
           </NavLink>
         </li>
       </ul>

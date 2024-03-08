@@ -4,20 +4,36 @@ import "./ProductInfoPage.css";
 import Heading from "../UI/Heading";
 import FeaturedProduct from "../UI/FeaturedProduct";
 import { Potion } from "../../redux/potionsSlice";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useEffect, useState } from "react";
+import { addPotion } from "../../redux/cartSlice";
 
 export default function ProductInfoPage() {
+  const [quantity, setQuantity] = useState("1");
+  const [related, setRelated] = useState<Potion[]>([]);
   const { id } = useParams();
+  const dispatch = useAppDispatch();
+
   const potions = useAppSelector((state) => state.potions.potions);
   const potion: Potion = potions[Number(id)];
 
-  const related: Potion[] = [];
-  for (let i = 0; i < 4; i++) {
-    const index: number = Math.floor(Math.random() * potions.length);
-    related.push(potions[index]);
+  function handleAddToCart() {
+    dispatch(addPotion({ ...potion, quantity: parseInt(quantity) }));
+    setQuantity("1");
   }
 
-  console.log(related);
+  // Find 4 unique potions
+  useEffect(() => {
+    const allPotions: Potion[] = potions.filter((p) => p.id !== potion.id);
+    const relatedPotions: Potion[] = [];
+    for (let i = 0; i < 4; i++) {
+      const index: number = Math.floor(Math.random() * allPotions.length);
+      const newPotion: Potion = allPotions.splice(index, 1)[0];
+      relatedPotions.push(newPotion);
+    }
+    setRelated(relatedPotions);
+  }, [potions, potion.id]);
+
   return (
     <div className="product-info-page">
       <section className="product">
@@ -28,8 +44,13 @@ export default function ProductInfoPage() {
             {potion.price} <small>Gold coins</small>
           </h2>
           <div className="options">
-            <input type="number" defaultValue={1} />
-            <Button text="Add to Cart" />
+            <input
+              type="number"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              min={1}
+            />
+            <Button text="Add to Cart" onClick={handleAddToCart} />
           </div>
           <h3>Potion Details</h3>
           <p>
@@ -46,6 +67,7 @@ export default function ProductInfoPage() {
         <div className="products">
           {related.map((potion) => (
             <FeaturedProduct
+              key={potion.id}
               potion={{ ...potion, image: "." + potion.image }}
             />
           ))}

@@ -37,12 +37,22 @@
 .cart-item .item-info img {
   width: 50px;
   margin-right: 1rem;
+  cursor: pointer;
+}
+
+.cart-item .item-info img:hover {
+  filter: drop-shadow(0 2px 1px #2222223b);
 }
 
 .cart-item .item-info h5 {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.cart-item .item-info h5:hover {
+  text-decoration: underline;
 }
 
 .cart-item .item-info h6 {
@@ -117,10 +127,16 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-  justify-content: center;
-  gap: 3rem;
+  margin-top: 4rem;
+  gap: 2rem;
 }
 
 .empty-cart h2 {
   font-size: 2rem;
+}
+
+.empty-cart svg {
+  font-size: 14rem;
+  color: var(--dark-orange);
+  filter: drop-shadow(1px 5px 2px #222);
 }

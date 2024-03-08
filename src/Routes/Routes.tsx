@@ -4,6 +4,7 @@ import AppLayout from "../components/AppLayout";
 import CartPage from "../components/CartPage/CartPage";
 import ProductInfoPage from "../components/ProductInfoPage/ProductInfoPage";
 import ProductsPage from "../components/ProductPage/ProductsPage";
+import PageNotFound from "../components/UI/PageNotFound";
 import UnderConstruction from "../components/UI/UnderConstruction";
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <UnderConstruction />,
+      },
+      {
+        path: "/:unknown",
+        element: <PageNotFound />,
       },
     ],
   },

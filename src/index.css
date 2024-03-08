@@ -48,6 +48,34 @@ body {
   transform: translateY(3px);
 }
 
+.logo {
+  margin-left: 10px;
+  font-size: 1.75rem;
+  letter-spacing: 0.25rem;
+  border-bottom: 2px solid black;
+  border-color: inherit;
+  position: relative;
+  bottom: 7px;
+}
+
+.logo span:first-of-type {
+  margin-right: -0.25rem;
+  position: relative;
+  top: 7px;
+}
+
+.logo svg {
+  margin-bottom: -0.2rem;
+  position: relative;
+  top: 7px;
+}
+
+.logo span:last-of-type {
+  margin-left: 0.25rem;
+  position: relative;
+  top: 7px;
+}
+
 .app-layout {
   position: relative;
   min-height: 100dvh;
@@ -64,13 +92,6 @@ body {
   width: 100%;
 }
 
-.navbar h1 {
-  margin-left: 10px;
-  font-size: 1.75rem;
-  letter-spacing: 0.25rem;
-  text-decoration: underline;
-}
-
 .navbar ul {
   list-style-type: none;
   display: flex;
@@ -78,12 +99,13 @@ body {
   gap: 15px;
   margin-right: 10px;
   color: black;
-  overflow: auto;
+  overflow: hidden;
   transition: max-height 0.5s;
 }
 
 .navbar li {
   transition: all 0.25s;
+  position: relative;
 }
 
 .navbar a {
@@ -95,7 +117,8 @@ body {
 .navbar li:focus,
 .navbar .active {
   cursor: pointer;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  border-bottom: 1px solid black;
   transform: translateY(-2px);
   font-weight: 500;
 }
@@ -134,10 +157,9 @@ body {
   margin-top: auto;
 }
 
-.footer h2 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  text-decoration: underline;
+.footer .logo {
+  margin: 0;
+  margin-bottom: 0.25rem;
 }
 
 .footer p {
@@ -175,6 +197,11 @@ body {
 .footer li:focus {
   cursor: pointer;
   color: #f2f2f2;
+}
+
+.footer a {
+  text-decoration: none;
+  color: inherit;
 }
 
 @media only screen and (max-width: 550px) {
@@ -215,6 +242,7 @@ body {
 
 .featured-product .product:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 /* <----------TOASTER----------> */
@@ -225,7 +253,8 @@ body {
 
 /* <----------CONSTRUCTION PAGE----------> */
 
-.construction {
+.construction,
+.page-not-found {
   margin: auto;
   margin-top: 14rem;
   display: flex;
@@ -233,11 +262,13 @@ body {
   align-items: center;
 }
 
-.construction h2 {
+.construction h2,
+.page-not-found h2 {
   font-size: 2rem;
 }
 
-.construction span {
+.construction span,
+.page-not-found span {
   font-size: 15rem;
   color: var(--dark-orange);
 }

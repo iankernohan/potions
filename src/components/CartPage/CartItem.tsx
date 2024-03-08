@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   decrementQuantity,
   incrementQuantity,
@@ -12,13 +13,19 @@ interface Props {
 
 export default function CartItem({ potion }: Props) {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <section className="cart-item">
       <div className="item-info">
-        <img src={potion.image} />
+        <img
+          src={potion.image}
+          onClick={() => navigate(`/potion/${potion.id}`)}
+        />
         <div>
-          <h5>{potion.name}</h5>
+          <h5 onClick={() => navigate(`/potion/${potion.id}`)}>
+            {potion.name}
+          </h5>
           <h6>
             {potion.price} <small>Gold coins</small>
           </h6>

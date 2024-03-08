@@ -26,7 +26,11 @@ export const cartSlice = createSlice({
       } else {
         state.potions.push(action.payload);
       }
-      toast.success("Potion added to cart");
+      toast.success(
+        action.payload.quantity > 1
+          ? `${action.payload.quantity} potions added to cart`
+          : "Potion added to cart"
+      );
     },
     removePotion: (state, action: PayloadAction<Potion>) => {
       console.log("potion removed from cart");

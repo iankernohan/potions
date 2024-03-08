@@ -1,3 +1,4 @@
+import { GiPotionOfMadness } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 
 export default function EmptyCart() {
@@ -5,7 +6,8 @@ export default function EmptyCart() {
 
   return (
     <div className="empty-cart">
-      <h2>Your cart is currently empty</h2>
+      <GiPotionOfMadness />
+      <h2>Your cart is currently empty...</h2>
       <button onClick={() => navigate("/products")} className="button">
         Explore Products
       </button>
