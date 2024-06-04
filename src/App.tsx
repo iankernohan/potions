@@ -7,13 +7,27 @@ import Reviews from "./components/HomePage/Reviews";
 import Sponsors from "./components/HomePage/Sponsors";
 import "./components/HomePage/HomePage.css";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 function App() {
   useEffect(() => {
     scrollTo({ top: 0 });
   }, []);
   return (
-    <>
+    <motion.div
+      initial={{
+        y: -100,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      exit={{
+        y: 100,
+        opacity: 0,
+      }}
+    >
       <Hero />
       <ImageSection />
       <FeaturedProducts />
@@ -21,7 +35,7 @@ function App() {
       <HighlightProduct />
       <Reviews />
       <Sponsors />
-    </>
+    </motion.div>
   );
 }
 

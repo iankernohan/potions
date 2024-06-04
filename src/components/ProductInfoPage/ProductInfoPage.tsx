@@ -7,6 +7,7 @@ import { Potion } from "../../redux/potionsSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { useEffect, useState } from "react";
 import { addPotion } from "../../redux/cartSlice";
+import { motion } from "framer-motion";
 
 export default function ProductInfoPage() {
   const [quantity, setQuantity] = useState("1");
@@ -36,7 +37,21 @@ export default function ProductInfoPage() {
   }, [potions, potion.id]);
 
   return (
-    <div className="product-info-page">
+    <motion.div
+      className="product-info-page"
+      initial={{
+        y: -100,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      exit={{
+        y: 100,
+        opacity: 0,
+      }}
+    >
       <section className="product">
         <img src={"." + potion.image} />
         <div>
@@ -74,6 +89,6 @@ export default function ProductInfoPage() {
           ))}
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }

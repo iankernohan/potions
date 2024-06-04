@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { Potion, sortByName, sortByPrice } from "../../redux/potionsSlice";
 import FeaturedProduct from "../UI/FeaturedProduct";
+import { motion } from "framer-motion";
 import "./ProductPage.css";
 
 export default function ProductsPage() {
@@ -30,7 +31,21 @@ export default function ProductsPage() {
   }
 
   return (
-    <div className="product-page">
+    <motion.div
+      className="product-page"
+      initial={{
+        y: -100,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      exit={{
+        y: 100,
+        opacity: 0,
+      }}
+    >
       <div className="header">
         <h2>All Products</h2>
         <select
@@ -52,6 +67,6 @@ export default function ProductsPage() {
           <FeaturedProduct key={potion.id} potion={potion} />
         ))}
       </section>
-    </div>
+    </motion.div>
   );
 }

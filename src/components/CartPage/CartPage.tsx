@@ -3,12 +3,27 @@ import CartItem from "./CartItem";
 import "./CartPage.css";
 import EmptyCart from "./EmptyCart";
 import TotalPrice from "./TotalPrice";
+import { motion } from "framer-motion";
 
 export default function CartPage() {
   const cartPotions = useAppSelector((state) => state.cart.potions);
 
   return (
-    <div className="cart-page">
+    <motion.div
+      className="cart-page"
+      initial={{
+        y: -100,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+      }}
+      exit={{
+        y: 100,
+        opacity: 0,
+      }}
+    >
       {cartPotions.length > 0 ? (
         <>
           <section className="col-labels">
@@ -26,6 +41,6 @@ export default function CartPage() {
       ) : (
         <EmptyCart />
       )}
-    </div>
+    </motion.div>
   );
 }
